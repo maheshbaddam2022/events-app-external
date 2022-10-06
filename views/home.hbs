@@ -1,0 +1,26 @@
+ {{#events}}
+<div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+     <div class="card-body">
+         <h5 class="card-title">{{ title }}</h5>
+          <p class="card-text">{{ description }}</p>
+            <p class="card-text" >Location: {{ location }}</p>
+          <p class="card-text">Likes: {{ likes }}</p>
+          <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <form method="POST" action="/event/like">
+                    <input type="hidden" value="{{id}}" name="id">
+                    <input class="btn btn-primary"type="submit" value="Like">
+                    </form>
+            </div>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                    <form method="POST" action="/event/unlike">
+                    <input type="hidden" value="{{id}}" name="id">
+                    <input  class="btn btn-danger" type="submit" value="UN-Like">
+            </form>
+          </div>
+          </div>
+        
+     </div>
+</div>
+{{/events}}
